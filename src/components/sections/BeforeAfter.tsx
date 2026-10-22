@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
+import Image from "next/image";
 
 export default function BeforeAfter() {
   const container = useRef<HTMLElement>(null);
@@ -83,7 +84,14 @@ export default function BeforeAfter() {
         className="ba-compare relative mt-12 aspect-[4/3] overflow-hidden rounded-3xl focus-within:ring-2 focus-within:ring-primary md:aspect-[16/9]"
       >
         {/* ANTES (camada de baixo) */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-stone-300">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/before.png"
+            alt="Sorriso antes do tratamento (imagem ilustrativa gerada por IA)"
+            fill
+            sizes="(min-width: 1152px) 1104px, 100vw"
+            className="object-cover"
+          />
           <span className="absolute left-4 top-4 rounded-full bg-white/80 px-3 py-1 text-sm font-medium text-foreground">
             Antes
           </span>
@@ -91,9 +99,16 @@ export default function BeforeAfter() {
 
         {/* DEPOIS (camada de cima, cortada pela posição da linha) */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-accent/50 to-primary/30"
+          className="absolute inset-0"
           style={{ clipPath: "inset(0 0 0 var(--pos))" }}
         >
+          <Image
+            src="/images/after.png"
+            alt="Sorriso depois do tratamento (imagem ilustrativa gerada por IA)"
+            fill
+            sizes="(min-width: 1152px) 1104px, 100vw"
+            className="object-cover"
+          />
           <span className="absolute right-4 top-4 rounded-full bg-white/80 px-3 py-1 text-sm font-medium text-foreground">
             Depois
           </span>

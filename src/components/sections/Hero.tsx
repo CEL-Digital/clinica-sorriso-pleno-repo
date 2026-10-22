@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { gsap, useGSAP, SplitText } from "@/lib/gsap";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function Hero() {
   const container = useRef<HTMLElement>(null);
@@ -91,7 +92,16 @@ export default function Hero() {
       </div>
 
       <div className="hero-image relative">
-        <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-accent/40 to-primary/20" />
+        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+          <Image
+            src="/images/hero-image.png"
+            alt="Paciente sorrindo em um consultório odontológico"
+            fill
+            preload
+            sizes="(min-width: 768px) 540px, 100vw"
+            className="object-cover"
+          />
+        </div>
         <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white px-5 py-4 shadow-lg">
           <p className="text-2xl font-semibold text-primary">+5.000</p>
           <p className="text-sm text-foreground/70">sorrisos transformados</p>
