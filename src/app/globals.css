@@ -32,13 +32,28 @@ body {
   .feature-head,
   .feature-card,
   .ba-head,
-  .ba-compare {
+  .ba-compare,
+  .how-head,
+  .how-step,
+  .testi-head,
+  .faq-item,
+  .cta-title,
+  .cta-item {
     visibility: hidden;
+  }
+  .how-line {
+    transform: scaleY(0);
   }
 }
 
 .ba-compare {
   --pos: 50%;
+}
+
+.how-dot.is-active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
 }
 
 @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
