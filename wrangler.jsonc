@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "sorriso-pleno",
+  "name": "clinica-sorriso-pleno-repo",
   "compatibility_date": "2026-10-19",
   "observability": {
     "enabled": true
